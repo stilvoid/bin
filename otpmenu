@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+
+IFS=$'\n'
+name=$(ls -1 $prefix/2fa | dmenu "$@")
+
+echo "NAME: $name"
+
+if [[ -z $name ]]; then
+    exit
+fi
+
+totp "$name" | xclip 2>/dev/null

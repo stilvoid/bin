@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xautolock -locker "i3lock -n -i ~/Sync/backdrops/archlinux-simplyblack.png" &
+xflux -l 51.5 -g -0.13 &
+xset +dpms
+xset s on

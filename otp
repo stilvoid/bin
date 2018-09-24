@@ -1,0 +1,3 @@
+#!/bin/bash
+
+totp $1 | xclip

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+name=$(echo | dmenu "$@")
+
+echo "NAME: $name"
+
+qutebrowser "$name"

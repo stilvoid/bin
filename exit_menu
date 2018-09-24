@@ -1,0 +1,11 @@
+#!/bin/sh
+
+choice=$(echo -e "Cancel\nExit\nSleep\nReboot\nHalt" | dmenu -i -fn "Hack-11" -nb "#002b36" -nf "#839496" -sb "#b58900" -b)
+
+case "$choice" in
+    "Cancel") ;;
+    "Exit") i3-msg exit ;;
+    "Sleep") systemctl suspend ;;
+    "Reboot") systemctl reboot ;;
+    "Halt") systemctl poweroff ;;
+esac

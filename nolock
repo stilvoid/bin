@@ -1,0 +1,6 @@
+#!/bin/bash
+
+killall xautolock
+killall xflux
+xset s off
+xset -dpms

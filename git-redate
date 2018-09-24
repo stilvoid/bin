@@ -1,0 +1,11 @@
+#!/bin/bash
+
+commit=$1
+date=$2
+
+if [ -z "$commit" -o -z "$date" ]; then
+    echo "Usage: git redate <commit hash> <new date>"
+    exit 1
+fi
+
+git filter-branch -f --env-filter "if [ \$GIT_COMMIT = $commit ]; then export GIT_AUTHOR_DATE=\"$date\"; export GIT_COMMITTER_DATE=\"$date\"; fi"
